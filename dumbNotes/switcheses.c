@@ -5,6 +5,8 @@ int main(){
 
     int dayOfWeek = 0;
 
+    scanf("%d", dayOfWeek);    
+
     switch(dayOfWeek){
 
         case 1:
