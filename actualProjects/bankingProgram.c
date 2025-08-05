@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void checkBalance(float balance);
+float checkBalance(float balance);
 float deposit();
 float withdraw(float balance);
 
@@ -29,15 +29,20 @@ int main(){
 
         case 2:
 
-            deposit();
+            balance += deposit();
             break;
 
         case 3:
 
-            withdraw(balance);
+            balance -= withdraw(balance);
+            break;
+        
+        case 4:
+            printf("Goodbye\n");
             break;
         
         default:
+            printf("\nInvalid choice");
             break;
         }
 
@@ -49,12 +54,39 @@ int main(){
 
 }
 
-void checkBalance(float balance){
-    return 0.0;
+float checkBalance(float balance){
+    printf("\nYour current balance is: $%.2f\n", balance);
 }
 float deposit(){
-    return 0.0;
+
+    float amount = 0.0f;
+
+    printf("How much would you like to deposit?: $");
+    scanf("%f", &amount);
+
+    if (amount < 0){
+        printf("Invalid amount\n");
+        return 0.0f;
+    } else{
+        printf("Successfully deposited $%.2f\n", amount);
+        return amount;
+    }
+
+
+    
 }
 float withdraw(float balance){
-    return 0.0;
+    
+    float amount = 0.0f;
+
+    printf("How much would you like to withdraw?: $");
+    scanf("%f", &amount);
+
+    if (amount < 0){
+        printf("Invalid amount\n");
+        return 0.0;
+    } else{
+        printf("Successfully withdrew $%.2f\n", amount);
+        return amount;
+    }
 }
