@@ -85,7 +85,12 @@ float withdraw(float balance){
     if (amount < 0){
         printf("Invalid amount\n");
         return 0.0;
-    } else{
+    } else if (amount > balance){
+        printf("Insufficient funds\n");
+        return 0.0;
+
+    }
+    else{
         printf("Successfully withdrew $%.2f\n", amount);
         return amount;
     }
