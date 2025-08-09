@@ -4,7 +4,7 @@
 
 #define MAX_TEXT 2048
 #define FILE_NAME "osint_report.txt"
-
+//TODO accept args
 void createReport() {
     FILE *f = fopen(FILE_NAME, "w");
     if (!f) {
